@@ -1,12 +1,5 @@
-<?php
-/**
- * The header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package Hammerhead
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
+
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -25,13 +18,24 @@
 		<div class="wrapper">
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'hammerhead' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false">Menu</button>
 
-		</div><!-- .wrapper -->
+				<?php
+					$menu_to_count = wp_nav_menu(array('echo' => false, 'theme_location' => 'main'));
+					$menu_items = substr_count($menu_to_count,'class="menu-item ');
+				?>
 
-	</header><!-- #masthead -->
+				<div class="menu-of-<?php echo $menu_items; ?>">
+					<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+				</div>
+
+			</nav>
+
+			
+
+		</div>
+
+	</header>
 
 	<div id="content" class="site-content">
 

@@ -18,6 +18,11 @@ Hammerhead is based on Underscores http://underscores.me/, (C) 2012-2015 Automat
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+/* line 22, ../sass/style.scss */
+#container * {
+  outline: 1px solid #eeeeff;
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------

@@ -23,7 +23,7 @@ if ( ! function_exists( 'hammerhead_setup' ) ) :
 		add_theme_support( 'post-formats', array('aside', 'image', 'video', 'quote', 'link',) );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array('primary' => __( 'Main Menu', 'hammerhead' )) );
+		register_nav_menus( array('main' => __( 'Main Menu', 'hammerhead' )) );
 
 		require_once( 'projects.php' );
 
