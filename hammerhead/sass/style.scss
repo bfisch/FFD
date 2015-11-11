@@ -47,9 +47,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "navigation/navigation";
 
+@import "pages/home";
+
 
 
 body {
-	height: 3000px;
 	background: $ffd_color_two;
 }

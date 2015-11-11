@@ -18,6 +18,9 @@ Hammerhead is based on Underscores http://underscores.me/, (C) 2012-2015 Automat
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+#container * {
+  outline: 1px solid #eeeeff; }
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -205,7 +208,6 @@ td,
 th {
   padding: 0; }
 
-/* Extras From Other Files */
 html {
   box-sizing: border-box; }
 
@@ -264,11 +266,6 @@ embed,
 iframe,
 object {
   max-width: 100%; }
-
-.wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto; }
 
 /*--------------------------------------------------------------
 2.0 Typography
@@ -329,92 +326,64 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
-#navigationContainer {
+.main-navigation {
   clear: both;
   display: block;
   float: left;
-  width: 100%;
-  position: fixed;
-  z-index: 1060;
-  background: #00bbff;
-  color: #186a8b;
-  /* Small menu. */ }
-  #navigationContainer .main-navigation {
-    clear: both;
-    display: block;
+  width: 10%; }
+  .main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5em;
+      left: -999em;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul {
+      left: auto; }
+  .main-navigation li {
     float: left;
-    width: 100%; }
-    #navigationContainer .main-navigation ul {
-      list-style: none;
-      margin: 0;
-      padding-left: 0; }
-      #navigationContainer .main-navigation ul > li {
-        text-align: center;
-        float: left;
-        position: relative;
-        padding: 18px 0; }
-        #navigationContainer .main-navigation ul > li a {
-          text-decoration: none;
-          text-transform: uppercase;
-          font-family: 'Montserrat';
-          letter-spacing: 2px;
-          color: #186a8b;
-          -webkit-transition: color 0.3s;
-          -moz-transition: color 0.3s;
-          transition: color 0.3s; }
-        #navigationContainer .main-navigation ul > li.current-menu-item a {
-          color: white;
-          text-shadow: 2px 2px 2px rgba(24, 106, 139, 0.75); }
-        #navigationContainer .main-navigation ul > li a:hover {
-          color: white !important; }
-    #navigationContainer .main-navigation:hover ul > li.current-menu-item a {
-      color: #00bbff; }
-    #navigationContainer .main-navigation .menu-of-1 ul > li {
-      width: 100%; }
-    #navigationContainer .main-navigation .menu-of-2 ul > li {
-      width: 50%; }
-    #navigationContainer .main-navigation .menu-of-3 ul > li {
-      width: 33.3333%; }
-    #navigationContainer .main-navigation .menu-of-4 ul > li {
-      width: 25%; }
-    #navigationContainer .main-navigation .menu-of-5 ul > li {
-      width: 20%; }
-    #navigationContainer .main-navigation .menu-of-6 ul > li {
-      width: 16.66666%; }
-    #navigationContainer .main-navigation .menu-of-7 ul > li {
-      width: 14.285714286%; }
-  #navigationContainer .menu-toggle {
-    display: none; }
-  @media screen and (max-width: 600px) {
-    #navigationContainer .menu-toggle,
-    #navigationContainer .main-navigation.toggled .nav-menu {
-      display: block; }
-    #navigationContainer .main-navigation ul {
-      display: none; } }
-
-.home .main-navigation ul > li {
-  padding: 38px 0; }
-
-.home #content .ls-nav-prev, .home #content .ls-nav-next {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 100%;
-  height: 30px;
-  width: 30px;
-  margin: 0 10px; }
-  .home #content .ls-nav-prev:after, .home #content .ls-nav-next:after {
-    font-family: "ETmodules";
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 29px;
-    font-weight: 100;
-    margin-top: 0px;
+    position: relative; }
+  .main-navigation a {
     display: block;
-    margin-left: 0px; }
-.home #content .ls-nav-prev:after {
-  content: "4"; }
-.home #content .ls-nav-next:after {
-  content: "5"; }
+    text-decoration: none; }
 
-body {
-  background: #1f262f; }
+/* Small menu. */
+.menu-toggle {
+  display: none; }
+
+@media screen and (max-width: 600px) {
+  .menu-toggle,
+  .main-navigation.toggled .nav-menu {
+    display: block; }
+
+  .main-navigation ul {
+    display: none; } }
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

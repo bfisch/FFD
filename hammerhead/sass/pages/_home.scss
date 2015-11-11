@@ -1,0 +1,27 @@
+.home {
+
+	#content {
+
+		.ls-nav-prev, .ls-nav-next {
+			background: rgba(0,0,0,.3);
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			margin: 0 10px;
+
+			&:after {
+				font-family: "ETmodules";
+				color: rgba(255,255,255,.8);
+				font-size: 29px;
+				font-weight: 100;
+				margin-top: 0px;
+				display: block;
+				margin-left: 0px;
+			}
+		}
+
+		.ls-nav-prev:after { content: "4"; }
+		.ls-nav-next:after { content: "5"; }
+
+	}
+}

@@ -40,6 +40,8 @@
 
 	</header>
 
+	<div id="headerFix"></div>
+
 	<div id="content" class="site-content">
 
 		<?php /* <div class="site-branding">

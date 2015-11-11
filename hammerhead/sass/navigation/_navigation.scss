@@ -3,6 +3,8 @@
 	display: block;
 	float: left;
 	width: 100%;
+	position: fixed;
+	z-index: 1060;
 	background: $ffd_color_main;
 	color: $ffd_color_three;
 
